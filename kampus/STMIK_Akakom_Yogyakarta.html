@@ -1,12 +1,324 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    Coba  STMIK Akakom Yogyakarta
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="manifest" href="/inkam/manifest.json">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="/css/all.css" > -->
+	
+    <!-- <link rel="stylesheet" href="/inkam/css/bootstrap.min.css" > -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" >
+    <title id="title"></title>
+
+    <style type="text/css">
+    	html, body{
+    		padding-top: 57px;
+    	}
+
+    	/*#navigasi{
+    		position: fixed;
+    		display: block;
+    	}*/
+
+    	.head img{
+    		width: 30px;
+    	}
+
+    	.head .button-collapse i{
+    		color: #8e44ad;
+    	}
+
+    	.menu{
+    		background: #8e44ad;
+    		border: none;
+    		margin-top: 56px;
+    	}
+    	.menu i{
+    		font-size: 1.3em;
+    		color: #f1c40f;
+    		padding: 3px;
+    	}
+
+    	.menu .nav-pills .nav-link.active{
+    		background-color: #FFF;
+    		color: #333;
+    	}
+
+    	/*menu drawer*/
+    	.drawer {
+		    height: 100%;
+		    width: 0;
+		    position: fixed;
+		    z-index: 10000;
+		    top: 0;
+		    left: 0;
+		    opacity: 0.93;
+		    background-color: #8e44ad;
+		    overflow-x: hidden;
+		    transition: 0.5s;
+		}
+
+		.drawer input[type="text"]{
+			background-color: #FFF;
+		}
+
+		.drawer .btn{
+			background-color: #f1c40f;
+		}
+
+		.drawer .btn i{
+			color: #8e44ad;
+			font-size: 1.2em;
+		}
+
+		.drawer input[type="text"]:focus{
+			background-color: #FFF;
+		}
+
+		.drawer-content {
+		    position: relative;
+		    top: 5%;
+		    width: 100%;
+		    margin-top: 30px;
+		}
+
+		.drawer .closebtn {
+		    position: absolute;
+		    top: 5px;
+		    right: 19px;
+		    text-decoration: none;
+		    display: block;
+		    transition: 0.3s;
+		    float: left;
+		}
+
+		.drawer .closebtn i{
+			font-size: 35px;
+			color: #f1c40f;
+		}
+
+		.drawer .menu-sidebar{
+			margin-top: 10px;
+			height: 500px;
+			overflow: auto;
+		}
+
+		.drawer .menu-sidebar nav a{
+			background-color: #9b59b6;
+			color: #FFFF;
+			margin-top: 3px;
+			padding: 10px;
+		}
+
+		.drawer .menu-sidebar nav a img{
+			width: 25%;
+			height: auto;
+			max-width: 70px;
+			background-color: #FFF;
+		}
+
+		@media only screen and (max-width: 600px) {
+			.drawer .menu-sidebar nav a img{
+				width: 11%;
+			}
+		}
+		
+
+    	/*bagian konten*/
+    	#konten{
+
+    	}
+
+    	#home .card{
+    		margin-top: 5px;
+    	}
+
+    	#home .card .btn-outline-warning {
+		    color: #f1c40f;
+		    background-color: transparent;
+		    background-image: none;
+		    border-color: #f1c40f;
+		}
+
+		#home .card .tgl{
+			font-size: 0.8em;
+			color: #aaa69d;
+		}
+
+		.file a{
+			text-decoration: none;
+		}
+    </style>
+  </head>
+  <body>
+	<div>
+		<div id="navigasi">
+		    <nav class="navbar navbar-expand-sm bg-light navbar-light head fixed-top">
+		    	<a class="navbar-brand">	    			
+		    		<img src="./asset/ig.png">
+		    		InKaM
+		    	</a>
+				<div style="font-size: 1.7em">
+	                <a href="#" class="button-collapse" onclick="openNav()"><i class="fas fa-bars"></i></i></a>
+	            </div>
+		    </nav>
+
+		    <nav class="navbar navbar-expand-sm navbar-light menu fixed-top">
+		    	<ul class="nav nav-pills"> 
+		    		<li class="nav-item aa">
+				      <a class="nav-link active" data-toggle="pill" href="#home"><i class="fas fa-home"></i></a>
+				    </li>
+				    <li class="nav-item">
+				      <a class="nav-link" data-toggle="pill" href="#menu1"><i class="far fa-file"></i></a>
+				    </li>
+				    <li class="nav-item">
+				      <a class="nav-link" data-toggle="pill" href="#menu2"><i class="fas fa-search"></i></a>
+				    </li>
+		    	</ul>
+		    </nav>
+		</div>
+
+		<div id="myNav" class="drawer">
+		  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+		  	<div class="drawer-content container">
+
+				<div class="md-form input-group">
+				  	<input type="text" class="form-control" placeholder="Search...">
+				  	<div class="input-group-append">
+				    	<button class="btn btn-sm m-0" type="button"><i class="fas fa-search"></i></button>
+				  	</div>
+				</div>
+
+  				<div class="menu-sidebar">
+					<nav class="nav flex-column" id="datak">
+
+					    <!-- <a class="nav-link" href="#">
+					    	<img src="./asset/akakom.png">
+					    	<span>STMIK Akakom Yogyakarta</span>
+					    </a> -->
+					    
+					</nav>
+				</div>
+		  	</div>
+		</div>
+
+	    <div class="container-fluid" id="konten">
+	    	<div class="tab-content">
+	    		<div id="home" class="tab-pane active">
+			      	<div class="row" id="datane">
+			      		<!-- <div class="col-12 col-sm-6">
+			      			<div class="card">
+			      				<img class="card-img-top" src="./asset/info2.jpg" alt="Card image cap" >
+			      				<div class="card-body">
+			      					<h5>Pengumuman Acara Pendampingan Skripsi</h5>
+			      					<span class="tgl">20 September 2018</span>
+			      					<p class="card-text">Ditujukan bagi semua mahasiswa yang mengambil skripsi pada Semester Gasal 2018/2019, akan diadakan acara “PENDAMPINGAN SKRIPSI” pada:...</p>
+			      					<a href="" class="btn btn-sm btn-outline-warning">Selengkapnya...</a>
+			      				</div>
+			      			</div>
+			      		</div> -->
+			      	</div>
+			    </div>
+			    <div id="menu1" class="tab-pane fade">
+					<div class="container pt-5 ">
+						<div class="row file">
+							<a href="/inkam/data/file/panduan-pra-skripsi-TI-2016_1-1.pdf" class="col-md-4 col-sm-1">
+								<div class="alert alert-warning">Panduan Pra Skripsi TI 2016</div>
+							</a>
+							<a href="/inkam/data/file/panduan-pra-skripsi-TI-2016_1-1.pdf" class="col-md-4 col-sm-1">
+								<div class="alert alert-warning">Panduan Pra Skripsi TI 2016</div>
+							</a>
+							<a href="/inkam/data/file/panduan-pra-skripsi-TI-2016_1-1.pdf" class="col-md-4 col-sm-1">
+								<div class="alert alert-warning">Panduan Pra Skripsi TI 2016</div>
+							</a>
+							<a href="/inkam/data/file/panduan-pra-skripsi-TI-2016_1-1.pdf" class="col-md-4 col-sm-1">
+								<div class="alert alert-warning">Panduan Pra Skripsi TI 2016</div>
+							</a>
+							<a href="/inkam/data/file/panduan-pra-skripsi-TI-2016_1-1.pdf" class="col-md-4 col-sm-1">
+								<div class="alert alert-warning">Panduan Pra Skripsi TI 2016</div>
+							</a>
+							<a href="/inkam/data/file/panduan-pra-skripsi-TI-2016_1-1.pdf" class="col-md-4 col-sm-1">
+								<div class="alert alert-warning">Panduan Pra Skripsi TI 2016</div>
+							</a>
+						</div>
+						
+					</div>
+			    </div>
+			    <div id="menu2" class="tab-pane fade">
+			      	<div class="container pt-5">
+						<div class="row">
+							<div class="col-md-4 col-sm-3 col-6 mx-0">
+								<a href="" class="card">
+									<img src="asset/coba.jpg" alt="" class="card-img-top">
+								</a>
+							</div>
+							<div class="col-md-4 col-sm-3 col-6 mx-0">
+								<a href="" class="card">
+									<img src="asset/coba.jpg" alt="" class="card-img-top">
+								</a>
+							</div>
+							<div class="col-md-4 col-sm-3 col-6 mx-0">
+								<a href="" class="card">
+									<img src="asset/coba.jpg" alt="" class="card-img-top">
+								</a>
+							</div>	
+							<div class="col-md-4 col-sm-3 col-6 mx-0">
+								<a href="" class="card">
+									<img src="asset/coba.jpg" alt="" class="card-img-top">
+								</a>
+							</div>
+							<div class="col-md-4 col-sm-3 col-6 mx-0">
+								<a href="" class="card">
+									<img src="asset/coba.jpg" alt="" class="card-img-top">
+								</a>
+							</div>
+							<div class="col-md-4 col-sm-3 col-6 mx-0">
+								<a href="" class="card">
+									<img src="asset/coba.jpg" alt="" class="card-img-top">
+								</a>
+							</div>	
+						</div>
+					</div>
+			    </div>
+			</div>
+	    </div>
+	</div>
+
+	
+
+    <!-- Optional JavaScript -->
+    <script>
+		function openNav() {
+		  document.getElementById("myNav").style.width = "100%";
+		}
+
+		function closeNav() {
+		  document.getElementById("myNav").style.width = "0%";
+		}
+	</script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="/inkam/js/jquery.min.js" ></script>
+    <script src="/inkam/js/popper.min.js" ></script>
+    <script src="/inkam/js/bootstrap.min.js" ></script>
+	<script src="/inkam/app/main.js"></script> -->
+	
+	<script src="js/jquery.min.js" ></script>
+    <script src="js/popper.min.js" ></script>
+    <script src="js/bootstrap.min.js" ></script>
+    <script src="app/main.js"></script>
+    <script>
+  		if ('serviceWorker' in navigator) {
+		window.addEventListener('load', function() {
+			navigator.serviceWorker.register('/inkam/sw.js').then(function(registration) {
+			// Registration was successful
+			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+			}).catch(function(err) {
+			// registration failed :(
+			console.log('ServiceWorker registration failed: ', err);
+			});
+		});
+		}
+	</script>
+  </body>
 </html>

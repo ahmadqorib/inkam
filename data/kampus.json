@@ -3,17 +3,26 @@
 		{
 			"id_kampus" : 1,
 			"kampus_name" : "STMIK Akakom Yogyakarta",
-			"kampus_logo" : "akakom.png"
+			"kampus_logo" : "akakom.png",
+			"visi": "Menjadi Perguruan Tinggi Teknologi Informasi, dan Komunikasi yang bersifat adaptif, berwawasan global, dan berlandaskan nilai-nilai luhur budaya bangsa.",
+			"misi": "Membangun sumber daya manusia  berdaya saing unggul dalam penguasaan Teknologi Informasi dan Komunikasi, berjiwa entrepreneur,  berbudipekerti luhur, dan berwawasan kebangsaan.",
+			"link": "https://www.akakom.ac.id"
 		},
 		{
 			"id_kampus" : 2,
 			"kampus_name" : "Universitas Gadjah Mada",
-			"kampus_logo" : "ugm.jpg"
+			"kampus_logo" : "ugm.jpg",
+			"visi": "Universitas Gadjah Mada sebagai pelopor perguruan tinggi nasional berkelas dunia yang unggul dan inovatif, mengabdi kepada kepentingan bangsa dan kemanusiaan dijiwai nilai-nilai budaya bangsa berdasarkan Pancasila.",
+			"misi": "Menjalankan pendidikan, penelitian, dan pengabdian kepada masyarakat serta pelestarian dan pengembangan ilmu yang unggul dan bermanfaat bagi masyarakat",
+			"link": "https://www.ugm.ac.id"
 		},
 		{
 			"id_kampus" : 3,
 			"kampus_name" : "Universitas Negeri Yogyakarta",
-			"kampus_logo" : "uny.png"
+			"kampus_logo" : "uny.png",
+			"visi": "Menjadi universitas kependidikan unggul, kreatif, dan inovatif berlandaskan ketaqwaan, kemandirian dan kecendekiaan pada tahun 2025",
+			"misi": "data kosong",
+			"link": "https://www.uny.ac.id"
 		}
 	]
 }
