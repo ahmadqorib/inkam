@@ -20,7 +20,7 @@ fetch('/inkam/data/kampus.json')
 	for (var i = 0; i < data.data.length; i++) {
 			console.log(data.data[i].kampus_name);
 			
-    	var list = '<a class="nav-link" href="'+data.data[i].kampus_name+'.html"><img src="/inkam/asset/'+data.data[i].kampus_logo+'"> <span>'+data.data[i].kampus_name+'</span></a>';
+    	var list = '<a class="nav-link" href=kampus/"'+data.data[i].kampus_name+'.html"><img src="/inkam/asset/'+data.data[i].kampus_logo+'"> <span>'+data.data[i].kampus_name+'</span></a>';
 		kampus.insertAdjacentHTML('beforeend', list);
 	}
 })
