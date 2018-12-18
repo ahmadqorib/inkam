@@ -1,12 +1,354 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    Universitas Gadjah Mada
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="manifest" href="/inkam/manifest.json">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="/css/all.css" > -->
+	
+    <link rel="stylesheet" href="/inkam/css/bootstrap.min.css" >
+	<!-- <link rel="stylesheet" href="../css/bootstrap.min.css" > -->
+    <title>InKaM</title>
+
+    <style type="text/css">
+    	html, body{
+    		padding-top: 57px;
+    	}
+
+    	/*#navigasi{
+    		position: fixed;
+    		display: block;
+    	}*/
+
+    	.head img{
+    		width: 30px;
+    	}
+
+    	.head .button-collapse i{
+    		color: #8e44ad;
+    	}
+
+    	.menu{
+    		background: #8e44ad;
+    		border: none;
+    		margin-top: 56px;
+    	}
+    	.menu i{
+    		font-size: 1.3em;
+    		color: #f1c40f;
+    		padding: 3px;
+    	}
+
+    	.menu .nav-pills .nav-link.active{
+    		background-color: #FFF;
+    		color: #333;
+    	}
+
+    	/*menu drawer*/
+    	.drawer {
+		    height: 100%;
+		    width: 0;
+		    position: fixed;
+		    z-index: 10000;
+		    top: 0;
+		    left: 0;
+		    opacity: 0.93;
+		    background-color: #8e44ad;
+		    overflow-x: hidden;
+		    transition: 0.5s;
+		}
+
+		.drawer input[type="text"]{
+			background-color: #FFF;
+		}
+
+		.drawer .btn{
+			background-color: #f1c40f;
+		}
+
+		.drawer .btn i{
+			color: #8e44ad;
+			font-size: 1.2em;
+		}
+
+		.drawer input[type="text"]:focus{
+			background-color: #FFF;
+		}
+
+		.drawer-content {
+		    position: relative;
+		    top: 5%;
+		    width: 100%;
+		    margin-top: 30px;
+		}
+
+		.drawer .closebtn {
+		    position: absolute;
+		    top: 5px;
+		    right: 19px;
+		    text-decoration: none;
+		    display: block;
+		    transition: 0.3s;
+		    float: left;
+		}
+
+		.drawer .closebtn i{
+			font-size: 35px;
+			color: #f1c40f;
+		}
+
+		.drawer .menu-sidebar{
+			margin-top: 10px;
+			height: 500px;
+			overflow: auto;
+		}
+
+		.drawer .menu-sidebar nav a{
+			background-color: #9b59b6;
+			color: #FFFF;
+			margin-top: 3px;
+			padding: 10px;
+		}
+
+		.drawer .menu-sidebar nav a img{
+			width: 25%;
+			height: auto;
+			max-width: 70px;
+			background-color: #FFF;
+		}
+
+		@media only screen and (max-width: 600px) {
+			.drawer .menu-sidebar nav a img{
+				width: 11%;
+			}
+		}
+		
+
+    	/*bagian konten*/
+    	#konten{
+
+    	}
+
+    	#home .card{
+    		margin-top: 5px;
+    	}
+
+    	#home .card .btn-outline-warning {
+		    color: #f1c40f;
+		    background-color: transparent;
+		    background-image: none;
+		    border-color: #f1c40f;
+		}
+
+		#home .card .tgl{
+			font-size: 0.8em;
+			color: #aaa69d;
+		}
+
+		.file a{
+			text-decoration: none;
+		}
+
+		/* gallery */
+		#demo {
+			height:100%;
+			position:relative;
+			overflow:hidden;
+		}
+		.green{
+			background-color:#6fb936;
+		}
+		.thumb{
+			margin-bottom: 5px;
+		}
+		
+		.page-top{
+			margin-top:5px;
+		}
+
+		img.zoom {
+			width: 100%;
+			height: 200px;
+			border-radius:5px;
+			object-fit:cover;
+			-webkit-transition: all .3s ease-in-out;
+			-moz-transition: all .3s ease-in-out;
+			-o-transition: all .3s ease-in-out;
+			-ms-transition: all .3s ease-in-out;
+		}
+				
+		.transition {
+			-webkit-transform: scale(1.2); 
+			-moz-transform: scale(1.2);
+			-o-transform: scale(1.2);
+			transform: scale(1.2);
+		}
+			.modal-header {
+		
+			border-bottom: none;
+		}
+		.modal-title {
+			color:#000;
+		}
+		.modal-footer{
+			display:none;  
+		}
+
+		.titleBox {
+			position: absolute;
+			bottom: 0;
+			left: 10px;
+			right: 10px;
+			margin-bottom: 0px;
+			background: #000;
+			background: rgba(0, 0, 0, 0.5);
+			color: #FFF;
+			padding: 10px;
+			text-align: center;
+			-webkit-transition: all 0.3s ease-out;
+			-moz-transition: all 0.3s ease-out;
+			-o-transition: all 0.3s ease-out;
+			transition: all 0.3s ease-out;
+			font-size: 0.9em;
+		}
+
+		/* search */
+		.btn-find{
+			background-color: #8e44ad;
+			color: #FFF;
+		}
+    </style>
+  </head>
+  <body>
+	<div>
+		<div id="navigasi">
+		    <nav class="navbar navbar-expand-sm bg-light navbar-light head fixed-top">
+		    	<a class="navbar-brand">	    			
+		    		<img src="./asset/ig.png">
+		    		InKaM
+		    	</a>
+				<div style="font-size: 1.7em">
+	                <a href="#" class="button-collapse" onclick="openNav()"><i class="fas fa-bars"></i></i></a>
+	            </div>
+		    </nav>
+
+		    <nav class="navbar navbar-expand-sm navbar-light menu fixed-top">
+		    	<ul class="nav nav-pills"> 
+		    		<li class="nav-item aa">
+				      <a class="nav-link" href="https://ahmadqorib.github.io/inkam/#home"><i class="fas fa-home"></i></a>
+				    </li>
+				    <li class="nav-item">
+				      <a class="nav-link" href="https://ahmadqorib.github.io/inkam"><i class="far fa-file"></i></a>
+				    </li>
+				    <li class="nav-item">
+				      <a class="nav-link" href="https://ahmadqorib.github.io/inkam"><i class="fas fa-search"></i></a>
+				    </li>
+		    	</ul>
+		    </nav>
+		</div>
+
+		<div id="myNav" class="drawer">
+		  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+		  	<div class="drawer-content container">
+
+				<div class="md-form input-group">
+				  	<input type="text" class="form-control" placeholder="Search...">
+				  	<div class="input-group-append">
+				    	<button class="btn btn-sm m-0" type="button"><i class="fas fa-search"></i></button>
+				  	</div>
+				</div>
+
+  				<div class="menu-sidebar">
+					<nav class="nav flex-column" id="datak">
+					    
+					</nav>
+				</div>
+		  	</div>
+		</div>
+
+	    <div class="container-fluid" id="konten">
+	    	<div class="tab-content">
+                <div id="detail" class="tab-pane active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7 col-sm-12 col-12">
+                                <span class="visi">Visi</span>
+                                <p>Universitas Gadjah Mada sebagai pelopor perguruan tinggi nasional berkelas dunia yang unggul dan inovatif, mengabdi kepada kepentingan bangsa dan kemanusiaan dijiwai nilai-nilai budaya bangsa berdasarkan Pancasila.</p>                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7 col-sm-12 col-12">
+                                <span class="misi">Misi</span>
+                                <p>Menjalankan pendidikan, penelitian, dan pengabdian kepada masyarakat serta pelestarian dan pengembangan ilmu yang unggul dan bermanfaat bagi masyarakat</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10 col-sm-12 col-12">
+                                <a href="https://www.ugm.ac.id"><h4>Link Website</h4></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10 col-sm-12 col-12">
+                                <label>
+                                    isinya disini
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+	    </div>
+	</div>
+
+	
+
+    <!-- Optional JavaScript -->
+    <script>
+		function openNav() {
+		  document.getElementById("myNav").style.width = "100%";
+		}
+
+		function closeNav() {
+		  document.getElementById("myNav").style.width = "0%";
+		}
+	</script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/inkam/js/jquery.min.js" ></script>
+    <script src="/inkam/js/popper.min.js" ></script>
+    <script src="/inkam/js/bootstrap.min.js" ></script>
+	<script src="/inkam/app/main.js"></script>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+    <script>
+  		if ('serviceWorker' in navigator) {
+		window.addEventListener('load', function() {
+			navigator.serviceWorker.register('/inkam/sw.js').then(function(registration) {
+			// Registration was successful
+			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+			}).catch(function(err) {
+			// registration failed :(
+			console.log('ServiceWorker registration failed: ', err);
+			});
+		});
+		}
+
+		$(document).ready(function(){
+			$(".fancybox").fancybox({
+				openEffect: "none",
+				closeEffect: "none"
+			});
+			
+			$(".zoom").hover(function(){
+				
+				$(this).addClass('transition');
+			}, function(){
+				
+				$(this).removeClass('transition');
+			});
+		});
+    
+	</script>
+  </body>
 </html>
