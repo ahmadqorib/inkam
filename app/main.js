@@ -19,6 +19,7 @@ fetch('/inkam/data/kampus.json')
 }).then(function(data) {
 	for (var i = 0; i < data.data.length; i++) {
     	var list = '<a class="nav-link" href="coba.html"><img src="/inkam/asset/'+data.data[i].kampus_logo+'"> <span>'+data.data[i].kampus_name+'</span></a>';
+    	var list = '<a class="nav-link" href="a.html"><img src="/inkam/asset/'+data.data[i].kampus_logo+'"> <span>'+data.data[i].kampus_name+'</span></a>';
 		kampus.insertAdjacentHTML('beforeend', list);
 	}
 })
