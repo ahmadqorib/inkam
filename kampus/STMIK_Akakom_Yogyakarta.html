@@ -225,7 +225,7 @@
 		<div id="navigasi">
 		    <nav class="navbar navbar-expand-sm bg-light navbar-light head fixed-top">
 		    	<a class="navbar-brand">	    			
-		    		<img src="./asset/ig.png">
+		    		<img src="/inkam/asset/ig.png">
 		    		InKaM
 		    	</a>
 				<div style="font-size: 1.7em">
@@ -290,9 +290,6 @@
                         </div>
                         <div class="row">
                             <div class="col-md-10 col-sm-12 col-12">
-                                <label>
-                                    isinya disini
-                                </label>
                             </div>
                         </div>
                     </div>
@@ -322,17 +319,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
     <script>
-  		if ('serviceWorker' in navigator) {
-		window.addEventListener('load', function() {
-			navigator.serviceWorker.register('/inkam/sw.js').then(function(registration) {
-			// Registration was successful
-			console.log('ServiceWorker registration successful with scope: ', registration.scope);
-			}).catch(function(err) {
-			// registration failed :(
-			console.log('ServiceWorker registration failed: ', err);
-			});
-		});
-		}
+  
 
 		$(document).ready(function(){
 			$(".fancybox").fancybox({

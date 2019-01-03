@@ -7,8 +7,8 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<!-- <link rel="stylesheet" href="/css/all.css" > -->
 	
-    <!-- <link rel="stylesheet" href="/inkam/css/bootstrap.min.css" > -->
-	<link rel="stylesheet" href="css/bootstrap.min.css" >
+    <link rel="stylesheet" href="/inkam/css/bootstrap.min.css" >
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css" > -->
     <title>InKaM</title>
 
     <style type="text/css">
@@ -149,6 +149,75 @@
 		.file a{
 			text-decoration: none;
 		}
+
+		/* gallery */
+		#demo {
+			height:100%;
+			position:relative;
+			overflow:hidden;
+		}
+		.green{
+			background-color:#6fb936;
+		}
+		.thumb{
+			margin-bottom: 5px;
+		}
+		
+		.page-top{
+			margin-top:5px;
+		}
+
+		img.zoom {
+			width: 100%;
+			height: 200px;
+			border-radius:5px;
+			object-fit:cover;
+			-webkit-transition: all .3s ease-in-out;
+			-moz-transition: all .3s ease-in-out;
+			-o-transition: all .3s ease-in-out;
+			-ms-transition: all .3s ease-in-out;
+		}
+				
+		.transition {
+			-webkit-transform: scale(1.2); 
+			-moz-transform: scale(1.2);
+			-o-transform: scale(1.2);
+			transform: scale(1.2);
+		}
+			.modal-header {
+		
+			border-bottom: none;
+		}
+		.modal-title {
+			color:#000;
+		}
+		.modal-footer{
+			display:none;  
+		}
+
+		.titleBox {
+			position: absolute;
+			bottom: 0;
+			left: 10px;
+			right: 10px;
+			margin-bottom: 0px;
+			background: #000;
+			background: rgba(0, 0, 0, 0.5);
+			color: #FFF;
+			padding: 10px;
+			text-align: center;
+			-webkit-transition: all 0.3s ease-out;
+			-moz-transition: all 0.3s ease-out;
+			-o-transition: all 0.3s ease-out;
+			transition: all 0.3s ease-out;
+			font-size: 0.9em;
+		}
+
+		/* search */
+		.btn-find{
+			background-color: #8e44ad;
+			color: #FFF;
+		}
     </style>
   </head>
   <body>
@@ -192,11 +261,6 @@
 
   				<div class="menu-sidebar">
 					<nav class="nav flex-column" id="datak">
-
-					    <!-- <a class="nav-link" href="#">
-					    	<img src="./asset/akakom.png">
-					    	<span>STMIK Akakom Yogyakarta</span>
-					    </a> -->
 					    
 					</nav>
 				</div>
@@ -207,21 +271,21 @@
 	    	<div class="tab-content">
 	    		<div id="home" class="tab-pane active">
 			      	<div class="row" id="datane">
-			      		<!-- <div class="col-12 col-sm-6">
-			      			<div class="card">
-			      				<img class="card-img-top" src="./asset/info2.jpg" alt="Card image cap" >
-			      				<div class="card-body">
-			      					<h5>Pengumuman Acara Pendampingan Skripsi</h5>
-			      					<span class="tgl">20 September 2018</span>
-			      					<p class="card-text">Ditujukan bagi semua mahasiswa yang mengambil skripsi pada Semester Gasal 2018/2019, akan diadakan acara “PENDAMPINGAN SKRIPSI” pada:...</p>
-			      					<a href="" class="btn btn-sm btn-outline-warning">Selengkapnya...</a>
-			      				</div>
-			      			</div>
-			      		</div> -->
+
 			      	</div>
 			    </div>
 			    <div id="menu1" class="tab-pane fade">
-					<div class="container pt-5 ">
+					<div class="container pt-3 ">
+						<div class="row">
+							<div class="col-md-4 col-sm-12 col-12">
+									<div class="input-group mb-3">
+										<input type="text" class="form-control" placeholder="Search">
+										<div class="input-group-append">
+											<button class="btn btn-find" type="submit">Go</button> 
+										</div>
+									</div>
+							</div>
+						</div>
 						<div class="row file">
 							<a href="/inkam/data/file/panduan-pra-skripsi-TI-2016_1-1.pdf" class="col-md-4 col-sm-1">
 								<div class="alert alert-warning">Panduan Pra Skripsi TI 2016</div>
@@ -246,38 +310,60 @@
 					</div>
 			    </div>
 			    <div id="menu2" class="tab-pane fade">
-			      	<div class="container pt-5">
+			      	<div class="container pt-3">
 						<div class="row">
-							<div class="col-md-4 col-sm-3 col-6 mx-0">
-								<a href="" class="card">
-									<img src="asset/coba.jpg" alt="" class="card-img-top">
+							<div class="col-md-4 col-sm-12 col-12">
+									<div class="input-group mb-3">
+										<input type="text" class="form-control" placeholder="Search">
+										<div class="input-group-append">
+											<button class="btn btn-find" type="submit">Go</button> 
+										</div>
+									</div>
+							</div>
+						</div>
+						<div class="row">
+
+
+							<div class="col-lg-3 col-md-4 col-sm-4 col-6 thumb">
+								<a href="" class="fancybox" rel="ligthbox">
+									<img  src="/inkam/asset/coba.jpg" class="zoom img-fluid "  alt="">
+									<div class="titleBox">Perkumpulan Dosen ST...</div>
 								</a>
 							</div>
-							<div class="col-md-4 col-sm-3 col-6 mx-0">
-								<a href="" class="card">
-									<img src="asset/coba.jpg" alt="" class="card-img-top">
+							<div class="col-lg-3 col-md-4 col-sm-4 col-6 thumb">
+								<a href=""  class="fancybox" rel="ligthbox">
+									<img  src="/inkam/asset/info1.jpeg" class="zoom img-fluid"  alt="">
+									<div class="titleBox">STMIK Akakom Karate...</div>
 								</a>
 							</div>
-							<div class="col-md-4 col-sm-3 col-6 mx-0">
-								<a href="" class="card">
-									<img src="asset/coba.jpg" alt="" class="card-img-top">
-								</a>
-							</div>	
-							<div class="col-md-4 col-sm-3 col-6 mx-0">
-								<a href="" class="card">
-									<img src="asset/coba.jpg" alt="" class="card-img-top">
+							
+							<div class="col-lg-3 col-md-4 col-sm-4 col-6 thumb">
+								<a href="" class="fancybox" rel="ligthbox">
+									<img  src="/inkam/asset/coba.jpg" class="zoom img-fluid "  alt="">
+									<div class="titleBox">Perkumpulan Dosen ST...</div>
 								</a>
 							</div>
-							<div class="col-md-4 col-sm-3 col-6 mx-0">
-								<a href="" class="card">
-									<img src="asset/coba.jpg" alt="" class="card-img-top">
+							<div class="col-lg-3 col-md-4 col-sm-4 col-6 thumb">
+								<a href=""  class="fancybox" rel="ligthbox">
+									<img  src="/inkam/asset/info1.jpeg" class="zoom img-fluid"  alt="">
+									<div class="titleBox">STMIK Akakom Karate...</div>
 								</a>
 							</div>
-							<div class="col-md-4 col-sm-3 col-6 mx-0">
-								<a href="" class="card">
-									<img src="asset/coba.jpg" alt="" class="card-img-top">
+							
+							<div class="col-lg-3 col-md-4 col-sm-4 col-6 thumb">
+								<a href="" class="fancybox" rel="ligthbox">
+									<img  src="/inkam/asset/coba.jpg" class="zoom img-fluid "  alt="">
+									<div class="titleBox">Perkumpulan Dosen ST...</div>
 								</a>
-							</div>	
+							</div>
+							<div class="col-lg-3 col-md-4 col-sm-4 col-6 thumb">
+								<a href=""  class="fancybox" rel="ligthbox">
+									<img  src="/inkam/asset/info1.jpeg" class="zoom img-fluid"  alt="">
+									<div class="titleBox">STMIK Akakom Karate...</div>
+								</a>
+							</div>
+							
+							
 						</div>
 					</div>
 			    </div>
@@ -298,15 +384,13 @@
 		}
 	</script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="/inkam/js/jquery.min.js" ></script>
+    <script src="/inkam/js/jquery.min.js" ></script>
     <script src="/inkam/js/popper.min.js" ></script>
     <script src="/inkam/js/bootstrap.min.js" ></script>
-	<script src="/inkam/app/main.js"></script> -->
-	
-	<script src="js/jquery.min.js" ></script>
-    <script src="js/popper.min.js" ></script>
-    <script src="js/bootstrap.min.js" ></script>
-    <script src="app/main.js"></script>
+	<script src="/inkam/app/main.js"></script>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
     <script>
   		if ('serviceWorker' in navigator) {
 		window.addEventListener('load', function() {
@@ -319,6 +403,22 @@
 			});
 		});
 		}
+
+		$(document).ready(function(){
+			$(".fancybox").fancybox({
+				openEffect: "none",
+				closeEffect: "none"
+			});
+			
+			$(".zoom").hover(function(){
+				
+				$(this).addClass('transition');
+			}, function(){
+				
+				$(this).removeClass('transition');
+			});
+		});
+    
 	</script>
   </body>
 </html>
