@@ -396,7 +396,11 @@
               console.error('Service Worker Error', err);
             });
           });
-        }
+		}
+		
+		if(self.IndexedDB){
+    		console.log('IndexedDB is supported');
+		}
 
 		$(document).ready(function(){
 			$(".fancybox").fancybox({
