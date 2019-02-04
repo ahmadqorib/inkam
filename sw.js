@@ -2,7 +2,13 @@ const cacheVersion = 'pwa-InKaM-v1';
 
 const filesToCache = [
   '/inkam/',
-  '/inkam/data/info.json'
+  '/inkam/asset/akakom.png',
+  '/inkam/asset/ig.png',
+  '/inkam/asset/info1.jpeg',
+  '/inkam/asset/coba.jpg',
+  '/inkam/app/main.js',
+  '/inkam/data/info.json',
+  '/inkam/not-found.html'
 ];
 
 self.addEventListener('install', event => {
