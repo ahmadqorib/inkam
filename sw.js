@@ -1,6 +1,6 @@
-var cacheVersion = 'pwa-InKaM-v1';
+const cacheVersion = 'pwa-InKaM-v1';
 
-var filesToCache = [
+const filesToCache = [
   '/inkam/',
   '/inkam/asset/akakom.png',
   '/inkam/asset/ig.png',
@@ -25,13 +25,13 @@ self.addEventListener('install', function(event) {
   );
 });
 
-// self.addEventListener('fetch', function(event) {
-//   event.respondWith(
-//     caches.match(event.request)
-//       .then(function(res) {
-//         if (res) return res;
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request)
+      .then(function(res) {
+        if (res) return res;
 
-//         return fetch(event.request);
-//       })
-//   );
-// });
+        return fetch(event.request);
+      })
+  );
+});
