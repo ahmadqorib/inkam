@@ -1,8 +1,8 @@
 const cacheVersion = 'pwa-InKaM-v1';
 
 const filesToCache = [
-  './inkam/',
-  './inkam/asset/akakom.png',
+  '/inkam/',
+  '/asset/akakom.png',
   '/inkam/asset/ig.png',
   '/inkam/asset/info1.jpeg',
   '/inkam/asset/coba.jpg',
