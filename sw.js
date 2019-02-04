@@ -1,6 +1,6 @@
-const cacheVersion = 'pwa-InKaM-v1';
+var cacheVersion = 'pwa-InKaM-v1';
 
-const filesToCache = [
+var filesToCache = [
   '/inkam/',
   '/inkam/asset/akakom.png',
   '/inkam/asset/ig.png',
@@ -22,7 +22,7 @@ self.addEventListener('install', function(event) {
       .then(function(cache) {
         return cache.addAll(filesToCache)
       })
-  )
+  );
 });
 
 self.addEventListener('fetch', function(event) {
