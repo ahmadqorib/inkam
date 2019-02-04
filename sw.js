@@ -8,6 +8,8 @@ const filesToCache = [
   '/inkam/asset/coba.jpg',
   '/inkam/app/main.js',
   '/inkam/data/info.json',
+  '/inkam/data/kampus.json',
+  '/inkam/data/file/panduan-pra-skripsi-TI-2016_1-1.pdf',
   '/inkam/not-found.html'
 ];
 
