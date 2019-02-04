@@ -386,6 +386,10 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
     <script>
+		if (!window.indexedDB) {
+    window.alert("Your browser doesn't support a stable version of IndexedDB. Such and such feature will not be available.");
+}
+
   		if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
             navigator.serviceWorker.register('/inkam/sw.js')
