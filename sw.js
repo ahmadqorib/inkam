@@ -16,22 +16,57 @@ const filesToCache = [
   '/inkam/data/info.json',
 ];
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', event => {
+  console.log('Attempting to install service worker and cache');
   event.waitUntil(
     caches.open(cacheVersion)
-      .then(function(cache) {
-        return cache.addAll(filesToCache)
-      })
+    .then(cache => {
+      return cache.addAll(filesToCache);
+    })
   );
 });
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('activate', event => {
+
+  const cacheWhitelist = [cacheVersion];
+
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
+
+self.addEventListener('fetch', event => {
+  console.log('Fetch event for ', event.request.url);
   event.respondWith(
     caches.match(event.request)
-      .then(function(res) {
-        if (res) return res;
-
-        return fetch(event.request);
-      })
+    .then(response => {
+      if (response) {
+        console.log('Found ', event.request.url, ' in cache');
+        return response;
+      }
+      console.log('Network request for ', event.request.url);
+      return fetch(event.request)
+      .then(response => {
+        if (response.status === 404) {
+          return caches.match('/inkam/not-found.html');
+        }
+        return caches.open(cacheVersion)
+        .then(cache => {
+          cache.put(event.request.url, response.clone());
+          return response;
+        });
+      });
+    }).catch(error => {
+      console.log('Error, ', error);
+      return caches.match('/inkam/not-found.html');
+    })
   );
 });
