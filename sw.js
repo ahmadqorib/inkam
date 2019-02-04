@@ -1,4 +1,4 @@
-const cacheVersion = 'pwa-InKaM-v1';
+const cacheVersion = 'pwa-InKaM-v2';
 
 const filesToCache = [
   '/inkam/',
