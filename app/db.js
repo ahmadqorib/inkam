@@ -1,5 +1,4 @@
- (function() {
-    'use strict';
+
   
     //check for support
     if (!('indexedDB' in window)) {
@@ -11,7 +10,6 @@
         db.createObjectStore('tbl_info');
     });
 
-  })();
 
   
   
