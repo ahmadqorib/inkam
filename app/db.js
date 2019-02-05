@@ -1,4 +1,4 @@
-(function() {
+ (function() {
     'use strict';
   
     //check for support
@@ -7,7 +7,7 @@
       return;
     }
   
-    var dbPromise = idb.open('test-db4', 1, function(upgradeDb) {
+    var dbPromise = indexedDB.open('test-db4', 1, function(upgradeDb) {
       if (!upgradeDb.objectStoreNames.contains('people')) {
         var peopleOS = upgradeDb.createObjectStore('people', {keyPath: 'email'});
         peopleOS.createIndex('gender', 'gender', {unique: false});
