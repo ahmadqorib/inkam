@@ -1,6 +1,6 @@
 var myArticlesAPI = "";
 
-fetch('https://my-json-server.typicode.com/syahroelanwar/pwaapi/wisata')
+fetch('/inkam/data/info.json')
   	.then((response) => {
    		if(response.ok) {
      		return response.json();
