@@ -10,7 +10,7 @@ fetch('/inkam/data/info.json')
  	})
  	.then((json) => {
 	   	myArticlesAPI = json;
-	   	console.log(myArticlesAPI.data);
+	   	console.log(myArticlesAPI);
 
         window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 		
@@ -26,7 +26,7 @@ fetch('/inkam/data/info.json')
 
 			request.onupgradeneeded = function(e){
 				db = e.target.result;
-				var objectStore = db.createObjectStore("articles", {keyPath: "id"});
+				var objectStore = db.createObjectStore("articles", {keyPath: "id_info"});
 				objectStore.createIndex("name", "name", {unique: false});
 				objectStore.transaction.oncomplete = function(e){
 					var store = db.transaction(["articles"], "readwrite").objectStore("articles");
