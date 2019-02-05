@@ -8,7 +8,7 @@
       return;
     }
   
-    var dbPromise = indexedDB.open('couches-n-things', 3, function(upgradeDb) {
+    var dbPromise = indexedDB.open('couches-n-things', 2, function(upgradeDb) {
         switch (upgradeDb.oldVersion) {
           case 0:
             // a placeholder case so that the switch block will
