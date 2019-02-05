@@ -9,7 +9,8 @@ const filesToCache = [
   '/inkam/app/main.js',
   '/inkam/data/info.json',
   '/inkam/data/kampus.json',
-  '/inkam/not-found.html'
+  '/inkam/not-found.html',
+  '/inkam/no-internet.html'
 ];
 
 self.addEventListener('install', event => {
@@ -62,7 +63,7 @@ self.addEventListener('fetch', event => {
       });
     }).catch(error => {
       console.log('Error, ', error);
-      return caches.match('/inkam/not-found.html');
+      return caches.match('/inkam/no-internet.html');
     })
   );
 });
