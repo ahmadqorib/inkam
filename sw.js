@@ -7,6 +7,7 @@ const filesToCache = [
   '/inkam/asset/info1.jpeg',
   '/inkam/asset/coba.jpg',
   '/inkam/app/main.js',
+  '/inkam/app/db.js',
   '/inkam/data/info.json',
   '/inkam/data/kampus.json',
   '/inkam/not-found.html',

@@ -1,6 +1,6 @@
 
-const tabelku = indexedDB.open('dbku', 1, db => {
-    db.createObjectStore('tabelku');
+const info = indexedDB.open('db_inkam', 1, db => {
+    db.createObjectStore('info');
   });
   
 
