@@ -1,7 +1,14 @@
-import idb from 'idb-master/build/idb.js';
-const tabelku = idb.open('dbku', 1, db => {
-    db.createObjectStore('tabelku');
-  });
+(function() {
+    'use strict';
   
+    //check for support
+    if (!('indexedDB' in window)) {
+      console.log('This browser doesn\'t support IndexedDB');
+      return;
+    }
+  
+    var dbPromise = idb.open('test-db1', 1);
+  
+  })();
 
   
