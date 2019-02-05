@@ -5,9 +5,9 @@
       console.log('This browser doesn\'t support IndexedDB');
     }
   
-    var dbPromise = indexedDB.open('test-db4', 1, function(db) {
-        db.createObjectStore('tbl_info');
-    });
+    const tabelku = indexedDB.open('dbku', 1, db => {
+        db.createObjectStore('tabelku');
+      });
 
 
   
