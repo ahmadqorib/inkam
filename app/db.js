@@ -30,8 +30,8 @@ fetch('/inkam/data/info.json')
 				objectStore.createIndex("name", "name", {unique: false});
 				objectStore.transaction.oncomplete = function(e){
 					var store = db.transaction(["articles"], "readwrite").objectStore("articles");
-					for( var i = 0 ; i < myArticlesAPI.length ; i++){
-						store.add(myArticlesAPI[i]);
+					for( var i = 0 ; i < myArticlesAPI.data.length ; i++){
+						store.add(myArticlesAPI.data[i]);
 					}
 				}
 			}
