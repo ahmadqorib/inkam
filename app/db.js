@@ -8,7 +8,7 @@
       return;
     }
   
-    var dbPromise = idb.open('test-db2', 1, function(upgradeDb) {
+    var dbPromise = indexedDB.open('test-db2', 1, function(upgradeDb) {
       console.log('making a new object store');
       if (!upgradeDb.objectStoreNames.contains('firstOS')) {
         upgradeDb.createObjectStore('firstOS');
