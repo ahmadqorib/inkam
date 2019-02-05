@@ -1,4 +1,4 @@
-var myArticlesAPI = "";
+var info = "";
 
 fetch('/inkam/data/info.json')
   	.then((response) => {
@@ -9,8 +9,8 @@ fetch('/inkam/data/info.json')
    		}
  	})
  	.then((json) => {
-	   	myArticlesAPI = json;
-	   	console.log(myArticlesAPI);
+	   	info = json;
+	   	console.log(info);
 
         window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 		
@@ -26,12 +26,12 @@ fetch('/inkam/data/info.json')
 
 			request.onupgradeneeded = function(e){
 				db = e.target.result;
-				var objectStore = db.createObjectStore("articles", {keyPath: "id_info"});
-				objectStore.createIndex("name", "name", {unique: false});
+				var objectStore = db.createObjectStore("tbl_info", {keyPath: "id_info"});
+				objectStore.createIndex("info", "info", {unique: false});
 				objectStore.transaction.oncomplete = function(e){
-					var store = db.transaction(["articles"], "readwrite").objectStore("articles");
-					for( var i = 0 ; i < myArticlesAPI.data.length ; i++){
-						store.add(myArticlesAPI.data[i]);
+					var store = db.transaction(["tbl_info"], "readwrite").objectStore("tbl_info");
+					for( var i = 0 ; i < info.data.length ; i++){
+						store.add(info.data[i]);
 					}
 				}
 			}
@@ -40,7 +40,7 @@ fetch('/inkam/data/info.json')
 				db = e.target.result;
 				console.log("success");
 
-				var objectStore = db.transaction('articles').objectStore('articles');
+				var objectStore = db.transaction('tbl_info').objectStore('tbl_info');
 
 			   	objectStore.openCursor().onsuccess = function (event) {
 			     	var cursor = event.target.result;
@@ -87,7 +87,7 @@ fetch('/inkam/data/info.json')
 			}
 
 		} 
-   		return myArticlesAPI;
+   		return info;
  	})
  	.catch(error => {
       console.log('Error, ', error);
