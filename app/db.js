@@ -16,7 +16,7 @@ fetch('/inkam/data/info.json')
 		
 		if(window.indexedDB){
 			var db;
-			var request = indexedDB.open("articlesDB", 1);
+			var request = indexedDB.open("db_inkam", 1);
 			db = this.result
 
 			request.onerror = function(e){
