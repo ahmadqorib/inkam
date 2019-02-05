@@ -3,7 +3,7 @@
   
     //check for support
     if (!('indexedDB' in window)) {
-      console.log('This browser doesn't support IndexedDB');
+      console.log('This browser doesnt support IndexedDB');
       return;
     }
   
