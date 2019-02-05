@@ -10,7 +10,7 @@ fetch('/inkam/data/info.json')
  	})
  	.then((json) => {
 	   	myArticlesAPI = json;
-	   	console.log(myArticlesAPI);
+	   	console.log(myArticlesAPI.data);
 
         window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 		
