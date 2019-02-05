@@ -85,7 +85,7 @@ fetch('/inkam/data/info.json')
 			}
 
 		} 
-   		return info;
+   		return kampus;
  	})
  	.catch(error => {
       console.log('Error, ', error);
