@@ -1,3 +1,4 @@
-const tabelInformasi = idb.open('dbInkam', 1, db => {
-    db.createObjectStore('tabelInformasi');
-  });
+if (!('indexedDB' in window)) {
+    console.log('This browser doesn\'t support IndexedDB');
+    return;
+  }
