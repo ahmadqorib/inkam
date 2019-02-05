@@ -1,6 +1,7 @@
-Components.utils.importGlobalProperties(["indexedDB"]);
 
-// From here on, it's like using IndexedDB from content
-var req = indexedDB.open("my-database");
+const tabelku = indexedDB.open('dbku', 1, db => {
+    db.createObjectStore('tabelku');
+  });
+  
 
   
