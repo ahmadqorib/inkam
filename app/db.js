@@ -28,8 +28,8 @@ fetch('/inkam/data/info.json')
 				db = e.target.result;
 				var objectStore = db.createObjectStore("tbl_info", {keyPath: "id_info"});
 				objectStore.createIndex("info_name", "info_name", {unique: false});
-				objectStore.createIndex("info_name", "info_image", {unique: false});
-				objectStore.createIndex("info_name", "info_desc", {unique: false});
+				objectStore.createIndex("info_image", "info_image", {unique: false});
+				objectStore.createIndex("info_desc", "info_desc", {unique: false});
 				objectStore.transaction.oncomplete = function(e){
 					var store = db.transaction(["tbl_info"], "readwrite").objectStore("tbl_info");
 					for( var i = 0 ; i < info.data.length ; i++){
